@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package engine;
+option go_package = "github.com/vbardakos/goflow/engine";
+
+message ActorID {
+	string address = 1;
+	optional uint64 uid = 2;  // null for atomic actor
+}
+
+
+message Ping {
+	ActorID from = 1;
+}
+
+message Pong {
+	ActorID from = 1;
+}
+
